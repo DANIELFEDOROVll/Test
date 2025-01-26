@@ -7,7 +7,8 @@ import com.example.testtaskintern.data.storage.entity.InformationDb
 
 @Database(
     entities = [InformationDb::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDatabase: RoomDatabase(){
     abstract fun getInformationDao(): InformationDao

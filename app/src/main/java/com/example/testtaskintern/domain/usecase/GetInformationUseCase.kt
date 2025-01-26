@@ -6,7 +6,7 @@ import com.example.testtaskintern.domain.entity.Information
 
 
 interface GetInformationUseCase{
-    suspend fun invoke(bin: String): Information
+    suspend operator fun invoke(bin: String): Information
 }
 
 class GetInformationUseCaseImpl(

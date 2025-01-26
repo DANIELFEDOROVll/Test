@@ -62,10 +62,10 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     //UI
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.core.ktx)
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
 
 
     //KSP

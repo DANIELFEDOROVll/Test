@@ -1,4 +1,4 @@
-package com.example.testtaskintern.data.network.repo.utils
+package com.example.testtaskintern.core.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

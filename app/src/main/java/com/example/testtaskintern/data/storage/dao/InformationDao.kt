@@ -13,6 +13,6 @@ interface InformationDao {
     @Query("SELECT * FROM information_db ")
     suspend fun getHistoryInformation(): List<InformationDb>
 
-    @Query("SELECT * FROM information_db WHERE bin = :bin")
-    suspend fun getInformationByBin(bin: String): InformationDb
+    @Query("SELECT * FROM information_db WHERE bin = :bin LIMIT 1")
+    suspend fun getInformationByBin(bin: String): InformationDb?
 }
