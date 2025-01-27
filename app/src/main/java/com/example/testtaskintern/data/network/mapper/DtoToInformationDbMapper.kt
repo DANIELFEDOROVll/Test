@@ -7,21 +7,25 @@ import com.example.testtaskintern.data.storage.entity.InformationDb
 
 class DtoToInformationDbMapper {
     operator fun invoke(
-        informationDto: InformationDto,
-        bankDto: BankDto,
-        countryDto: CountryDto,
+        informationDto: InformationDto?,
+        bankDto: BankDto?,
+        countryDto: CountryDto?,
         bin: String
     ): InformationDb {
         return InformationDb(
             bin = bin,
-            country = countryDto.name,
-            latitude = countryDto.latitude,
-            longitude = countryDto.longitude,
-            cardType = informationDto.type,
-            bankName = bankDto.name,
-            bankUrl = bankDto.url,
-            bankPhone = bankDto.phone,
-            bankCity = bankDto.city,
+            country = countryDto?.name ?: DEFAULT_STRING_VALUE,
+            latitude = countryDto?.latitude ?: DEFAULT_INT_VALUE,
+            longitude = countryDto?.longitude ?: DEFAULT_INT_VALUE,
+            cardType = informationDto?.type ?: DEFAULT_STRING_VALUE,
+            bankName = bankDto?.name ?: DEFAULT_STRING_VALUE,
+            bankUrl = bankDto?.url ?: DEFAULT_STRING_VALUE,
+            bankPhone = bankDto?.phone ?: DEFAULT_STRING_VALUE,
+            bankCity = bankDto?.city ?:DEFAULT_STRING_VALUE,
         )
+    }
+    companion object{
+        private const val DEFAULT_STRING_VALUE = "no value"
+        private const val DEFAULT_INT_VALUE = -1
     }
 }

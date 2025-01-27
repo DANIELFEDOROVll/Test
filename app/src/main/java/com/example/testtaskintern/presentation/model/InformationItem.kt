@@ -1,6 +1,7 @@
 package com.example.testtaskintern.presentation.model
 
 data class InformationItem (
+    val bin: String,
     val country: String,
     val latitude: Int,
     val longitude: Int,

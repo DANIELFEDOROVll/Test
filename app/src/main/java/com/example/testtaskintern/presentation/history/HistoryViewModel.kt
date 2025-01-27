@@ -22,7 +22,8 @@ class HistoryViewModel(
 
     private fun getHistory(){
         viewModelScope.launch {
-            _history.value = getHistoryUseCase().map{ informationToUiMapper(it) }
+            val requestsHistory = getHistoryUseCase().map{ informationToUiMapper(it) }
+            _history.value = requestsHistory.reversed()
         }
     }
 }

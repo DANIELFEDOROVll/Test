@@ -1,8 +1,9 @@
 package com.example.testtaskintern
 
 import android.app.Application
-import com.example.testtaskintern.DI.AppModule
-import com.example.testtaskintern.DI.DatabaseModule
+import com.example.testtaskintern.DI.appModule
+import com.example.testtaskintern.DI.databaseModule
+import com.example.testtaskintern.DI.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -13,9 +14,8 @@ class MyApplication: Application() {
         startKoin{
             androidLogger()
             androidContext(this@MyApplication)
-            modules(AppModule, DatabaseModule)
+            modules(appModule, databaseModule, viewModelModule)
         }
     }
 }
-
-// сделать data sourcы
+//крашит при нажатии получить данные

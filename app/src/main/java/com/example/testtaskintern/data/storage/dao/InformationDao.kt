@@ -2,12 +2,13 @@ package com.example.testtaskintern.data.storage.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.testtaskintern.data.storage.entity.InformationDb
 
 @Dao
 interface InformationDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun putInformation(information: InformationDb)
 
     @Query("SELECT * FROM information_db ")

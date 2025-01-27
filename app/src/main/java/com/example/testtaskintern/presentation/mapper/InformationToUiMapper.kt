@@ -7,6 +7,7 @@ class InformationToUiMapper: (Information) -> InformationItem {
     override fun invoke(information: Information): InformationItem {
         return with(information){
             InformationItem(
+                bin = bin,
                 country = country,
                 latitude = latitude,
                 longitude = longitude,
