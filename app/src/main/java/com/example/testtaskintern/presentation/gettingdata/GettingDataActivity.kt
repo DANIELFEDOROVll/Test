@@ -1,6 +1,7 @@
 package com.example.testtaskintern.presentation.gettingdata
 
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -61,8 +62,9 @@ class GettingDataActivity : AppCompatActivity() {
 
         binding.textElem2.setOnClickListener {
             val latitude = binding.textElem2.text.toString().removePrefix("Latitude: ")
-            val longitude = binding.textElem3.text.toString().removePrefix("Longitude ")
-            openMaps(latitude, longitude)
+            val longitude = binding.textElem3.text.toString().removePrefix("Longitude: ")
+
+            openMaps(latitude.trim(), longitude.trim())
         }
     }
     private fun openUrl(url: String) {

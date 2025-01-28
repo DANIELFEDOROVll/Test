@@ -13,4 +13,9 @@
     <string name="bankCity">Город: %1$s</string>
 
     <string name="no_value">Введите значение</string>
+    <string name="history">История:</string>
+
+    <string name="input_bin">введите bin карты</string>
+    <string name="get_data">Получить данные</string>
+    <string name="see_history">Посмотреть историю</string>
 </resources>
